@@ -141,4 +141,16 @@ describe('Render', () => {
 
         expect(core.setFailed).toBeCalledWith('Invalid job definition: Could not find container definition');
     });
+
+    test('error if env var are not in the form of var=value', () => {
+        core.getInput = jest
+        .fn()
+        .mockReturnValueOnce('/hello/job-definition.json') // job-definition
+        .mockReturnValueOnce('nginx:latest')         // image
+        .mockReturnValueOnce('EXAMPLE+here');        // environment-variables
+
+        run();
+
+        expect(core.setFailed).toBeCalledWith("Cannot parse the environment variable 'EXAMPLE+here'. Environment variable pairs must be of the form NAME=value.");
+    });
 });
