@@ -1,0 +1,36 @@
+{
+  "name": "K3vChan-amazon-batch-render-job-definition",
+  "version": "0.0.1",
+  "description": "Render Amazon Batch job definition file",
+  "main": "index.js",
+  "scripts": {
+    "lint": "eslint **.js",
+    "package": "ncc build index.js -o dist",
+    "test": "eslint **.js && jest --coverage"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/K3vChan/amazon-batch-render-job-definition.git"
+  },
+  "keywords": [
+    "AWS",
+    "GitHub",
+    "Actions",
+    "JavaScript"
+  ],
+  "author": "AWS",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/K3vChan/amazon-batch-render-job-definition/issues"
+  },
+  "homepage": "https://github.com/K3vChan/amazon-batch-render-job-definition#readme",
+  "dependencies": {
+    "@actions/core": "^1.6.0",
+    "tmp": "^0.2.1"
+  },
+  "devDependencies": {
+    "@zeit/ncc": "^0.22.3",
+    "eslint": "^8.10.0",
+    "jest": "^27.5.1"
+  }
+}
